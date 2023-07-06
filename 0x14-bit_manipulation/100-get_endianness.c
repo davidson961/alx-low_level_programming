@@ -2,22 +2,15 @@
 #include <stdio.h>
 
 /**
- * 
- * Checks if the system is big endian or little endian
- * 
- * Always return: 0 if big endian, 1 if little endian
- *
- **/
-
+  * get_endianness - checks endianess.
+  * Return: 0 if big endian, 1 if little endian.
+  */
 int get_endianness(void)
-
 {
-	int num;
-	char *adrs;
+	int i = 1;
+	char *ch = (char *)&i;
 
-	num = 2;
-	adrs = (char *)&num;
-	if (*adrs)
+	if (*ch)
 		return (1);
 	return (0);
 }
